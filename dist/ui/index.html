@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMP 前端</title>
+  <link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>LMP</h1>
+    <div id="status"></div>
+  </header>
+  <main>
+    <section id="authPanel">
+      <h2>设备认证</h2>
+      <div class="form-row">
+        <label>设备名称</label>
+        <input id="deviceName" placeholder="例如：我的电脑">
+      </div>
+      <div class="form-actions">
+        <button id="btnGetCode">获取设备认证码</button>
+      </div>
+      <div class="code-row">
+        <label>认证码</label>
+        <input id="deviceCode" placeholder="输入或自动填充">
+        <span id="codeTTL"></span>
+      </div>
+      <div class="form-actions">
+        <button id="btnVerify">验证并登录</button>
+      </div>
+    </section>
+
+    <section id="appPanel" class="hidden">
+      <div class="toolbar">
+        <button id="btnLogout">退出</button>
+        <div class="search">
+          <input id="searchInput" placeholder="搜索名称…">
+          <select id="searchType">
+            <option value="">全部</option>
+            <option value="file">文件</option>
+            <option value="dir">目录</option>
+          </select>
+          <select id="searchSort">
+            <option value="name">名称</option>
+            <option value="size">大小</option>
+            <option value="time">修改时间</option>
+            <option value="type">类型</option>
+          </select>
+          <select id="searchOrder">
+            <option value="asc">升序</option>
+            <option value="desc">降序</option>
+          </select>
+          <button id="btnSearch">搜索</button>
+        </div>
+      </div>
+      <div class="content">
+        <h2 id="currentLabel">顶层目录</h2>
+        <div class="list-controls">
+          <button id="btnUp">返回上级</button>
+          <input id="filterInput" placeholder="过滤名称…">
+          <select id="listSort">
+            <option value="name">名称</option>
+            <option value="size">大小</option>
+            <option value="time">修改时间</option>
+            <option value="type">类型</option>
+          </select>
+          <select id="listOrder">
+            <option value="asc">升序</option>
+            <option value="desc">降序</option>
+          </select>
+          <button id="btnReload">刷新</button>
+          <span class="pager">
+            <button id="btnPrevList">上一页</button>
+            <span id="listPageLabel"></span>
+            <button id="btnNextList">下一页</button>
+          </span>
+        </div>
+        <table class="items">
+          <thead>
+            <tr><th>名称</th><th>类型</th><th>大小</th><th>修改时间</th><th>操作</th></tr>
+          </thead>
+          <tbody id="itemsBody"></tbody>
+        </table>
+        <h2>搜索结果</h2>
+        <table class="items">
+          <thead>
+            <tr><th>名称</th><th>类型</th><th>大小</th><th>修改时间</th><th>父目录</th><th>操作</th></tr>
+          </thead>
+          <tbody id="searchBody"></tbody>
+        </table>
+        <div class="list-controls">
+          <span class="pager">
+            <button id="btnPrevSearch">上一页</button>
+            <span id="searchPageLabel"></span>
+            <button id="btnNextSearch">下一页</button>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/ui/app.js"></script>
+</body>
+</html>

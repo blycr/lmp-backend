@@ -1,0 +1,7 @@
+{
+  "server": { "port": 9090, "lan_only": false },
+  "auth": { "enable_device_auth": false, "session_timeout": "30m" },
+  "files": { "share_dirs": [] },
+  "rate_limit": { "enabled": false, "requests_per_second": 1000, "burst": 1000 }
+}
+

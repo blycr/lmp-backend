@@ -1,0 +1,7 @@
+{
+  "server": { "port": 8080, "lan_only": true },
+  "auth": { "enable_device_auth": true, "session_timeout": "30m" },
+  "files": { "share_dirs": ["C:\\\\Users\\\\Public", "D:\\\\Shared"] },
+  "rate_limit": { "enabled": true, "requests_per_second": 10, "burst": 20 }
+}
+
